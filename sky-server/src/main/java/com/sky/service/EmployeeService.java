@@ -1,7 +1,10 @@
 package com.sky.service;
 
+import com.sky.dto.EmployeeDTO;
 import com.sky.dto.EmployeeLoginDTO;
+import com.sky.dto.EmployeePageQueryDTO;
 import com.sky.entity.Employee;
+import com.sky.result.PageResult;
 
 public interface EmployeeService {
 
@@ -11,5 +14,16 @@ public interface EmployeeService {
      * @return
      */
     Employee login(EmployeeLoginDTO employeeLoginDTO);
-
+    /**
+     * 员工注册
+     * @param employeeDTO
+     * @return
+     */
+    void insert(EmployeeDTO employeeDTO);
+    /**
+     * 员工分页
+     * @param employeePageQueryDTO
+     * @return
+     */
+    PageResult pageByName(EmployeePageQueryDTO employeePageQueryDTO);
 }
